@@ -1,5 +1,9 @@
 # OpenTelemetry JavaScript/Node Console Tracer
 
+![Build Status](https://github.com/serkan-ozal/otel-js-console-tracer/actions/workflows/build.yml/badge.svg)
+![NPM Version](https://badge.fury.io/js/otel-js-console-tracer.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
 NPM package which injects current/active **OpenTelemetry** trace id and span id along with log level into the logs 
 printed over `console` logging methods (`trace`, `debug`, `info`, `log`, `warn`, `error`).
 - If the there is no active span in the current context, only log level is injected into the logs.
@@ -62,7 +66,7 @@ npm install --save otel-js-console-tracer
     (for ex. if you don't have access to the startup script of the Node.js app, so you cannot configure bootstrap options).
 
 
-* **Optionally**, you can configure log level (the default log level is `NONE`):
+* **Optionally**, you can configure log level threshold (the default log level is `NONE`):
 
     - **By environment variable:**
       Set `OTEL_CONSOLE_TRACER_LOG_LEVEL` environment variable to any supported log level.
@@ -83,6 +87,7 @@ npm run example
 ## Roadmap
 
 - Print traced logs in JSON format
+- Custom log format
 
 
 ## Issues and Feedback
