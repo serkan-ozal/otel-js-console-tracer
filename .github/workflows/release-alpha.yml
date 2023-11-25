@@ -3,11 +3,12 @@ name: Release Alpha
 on:
   workflow_dispatch:
     inputs:
-      description: Version scale
-      required: true
-      type: choice
-      default: "patch"
-      options:
+      version_scale:
+        description: Version scale
+        required: true
+        type: choice
+        default: "patch"
+        options:
         - "minor"
         - "major"
         - "patch"
