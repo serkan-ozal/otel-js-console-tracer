@@ -19,6 +19,8 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
       - name: Configure Git User
         run: |
           git config --global user.email "action@github.com"
