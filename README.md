@@ -1,7 +1,7 @@
 # OpenTelemetry JavaScript/Node Console Tracer
 
 ![Build Status](https://github.com/serkan-ozal/otel-js-console-tracer/actions/workflows/build.yml/badge.svg)
-![NPM Version](https://badge.fury.io/js/otel-js-console-tracer.svg)
+![NPM Version](https://badge.fury.io/js/otel-console-tracer.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 NPM package which injects current/active **OpenTelemetry** trace id and span id along with log level into the logs 
@@ -29,7 +29,7 @@ if you don't configure any log level threshold.
 To install the package, you can use NPM (or Yarn):
 
 ```bash
-npm install --save otel-js-console-tracer
+npm install --save otel-console-tracer
 ```
 
 **Note:** Requires `@opentelemetry/api` version `1.0.0`+
@@ -37,27 +37,27 @@ npm install --save otel-js-console-tracer
 
 ## Usage
 
-* Initialize `otel-js-console-tracer` during bootstrap for Node.js app
+* Initialize `otel-console-tracer` during bootstrap for Node.js app
 
   - **During Bootstrap**
     You can trigger initialization automatically by setting `NODE_OPTIONS` environment variable 
-    to `otel-js-console-tracer` bootstrapper (`otel-js-console-tracer/dist/bootstrap`) to initialize at startup:
+    to `otel-console-tracer` bootstrapper (`otel-console-tracer/dist/bootstrap`) to initialize at startup:
     ```bash
-      NODE_OPTIONS="--require otel-js-console-tracer/dist/bootstrap"
+      NODE_OPTIONS="--require otel-console-tracer/dist/bootstrap"
       node app.js
     ```  
     **or** by adding the `--require` option into the Node.js command line options :
     ```bash
-    node --require otel-js-console-tracer/dist/bootstrap app.js
+    node --require otel-console-tracer/dist/bootstrap app.js
     ```
 
   - **In Code**
     In addition to automated initialization without code change described above, 
-    you can also initialize `otel-js-console-tracer` in your code:
+    you can also initialize `otel-console-tracer` in your code:
     ```javascript
-    const { init } = require('otel-js-console-tracer');
+    const { init } = require('otel-console-tracer');
     // or use the following for ES modules
-    // import { init } from 'otel-js-console-tracer';
+    // import { init } from 'otel-console-tracer';
     
     init();
     ```
